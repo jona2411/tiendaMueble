@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce - Contacto</title>
+<link rel="stylesheet" href="../css/app.css">
+
+    
+</head>
+
+<body>
+
+    <header>
+
+        <h1 class="nombre-sitios">Tienda <span>Muebles</span> </h1>
+    </header>
+  
+ <div class="contenedor-navegacion">
+    <nav class="nav-principal contenedor">
+        <a  href="./index.html">Home</a>
+        <a  href="./nosotros.html">Nosotros</a>
+        <a  href="./tienda.html">Tienda</a>
+        <a  href="./blog.html">Blog</a>
+        <a  href="./galeria.html">Galeria</a>
+        <a  href="./contactanos.html">Contacto</a>
+    </nav>
+
+</div>
+   
+
+    <main class="contenido-principal contenedor">   
+
+        <h2 class="text-center">Contacto</h2>
+
+        <form action="" class="formulario">
+            
+            <fieldset>
+                <legend>tus Datos</legend>
+                <div class="campo">
+                    <label for="nombre" >Nombre:</label>
+                    <input class="input" type="text" id="nombre" placeholder="nombre" required/>
+                </div>
+                <div class="campo">
+                    <label for="asunto " >asunto:</label>
+                    <input type="text" id="asunto" placeholder="asunto"required/>
+                </div>
+
+                 <div class="campo">
+                    <label for="mail " >mail:</label>
+                    <input type="email" id="mail" placeholder="email" required/>
+                </div>
+
+                <div class="campo">
+                    <label for="tel">telefono:</label>
+                    <input type="tel" id="tel" placeholder="telefono"required/>
+                </div>
+                <div class="campo">
+                    <label for="Mensaje " >Mensaje:</label>
+                    <textarea name="Mensaje" id="Mensaje" ></textarea>
+                </div>
+
+               
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Pais</legend>
+                <div class="campo">
+                    <label for="pais">Pais</label>
+                    <select name="" id="pais" required>
+                        <option value="" >--Selecciones--</option>
+                        <option value="VE">venezuela</option>
+                        <option value="CL:" >chile</option>
+                        <option value="PR">Peru</option>
+                        <option value="AR">Argentina</option>
+                        <option value="MX">mexico</option>
+                        <option value="CO">colombia</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informacion Extra</legend>
+
+                <div class="campo">
+                    <label for="cliente">Cliente</label>
+                    <input type="radio" id="cliente"  name="tipo" >
+                    
+                </div>
+                <div class="campo">
+                    <label for="proveedor">Proveedor</label>
+                    <input type="radio" id="proveedor" name="tipo">
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoria de interes</label>
+                    <input name="categoria" list="categorias">
+                    <datalist id="categorias">
+                        <option value="cosina"></option>
+                        <option value="exterior"></option>
+                        <option value="interior"></option>
+                        <option value="oficina"></option>
+                        <option value="recamara"></option>
+                    </datalist>
+                </div>
+            </fieldset>
+
+            <input class="btn" type="submit" value="enviar Formulario">
+        </form>
+        
+        
+        </main>
+   
+    <footer class="sisio-footer contenedor-navegacion">
+        <div class="listado-footer contenedor">
+        <div>
+            <h3>Categorias</h3>
+            <nav class="navegacion">
+                <a href="#">cosina</a>
+                <a href="#">oficina</a>
+                <a href="#">jardin</a>
+                <a href="#">cochera</a>
+                <a href="#">Dormitorio</a>
+            </nav>
+        </div>
+        <div>
+            <h3>Sobre Nosotros</h3>
+            <nav class="navegacion">
+                <a class="enlaces" href="#">Noestra historia</a>
+                <a  href="#">Mision y valores</a>
+                <a  href="#">Carreras</a>
+                <a  href="#">politica de privacidad</a>
+                <a  href="#">terminos de Servicios</a>
+            </nav>
+        </div>
+        <div>
+            <h3>Soporte</h3>
+            <nav class="navegacion">
+                <a href="#">pregunta Frecuentes</a>
+                <a href="#">ayuda en linea</a>
+                <a href="#">confianza y seguridad</a>
+                
+            </nav>
+        </div>
+         </div>
+        <p>todos los derechos reservados a jona</p>
+   
+    </footer>
+
+</body>
+</html>
