@@ -11,19 +11,35 @@ body{
     line-height: 2;
     background-color: #edede9;
 }
+
 h1, h2, h3{
     margin: 0 ;
 }
 h1{
-    font-size: 5rem;
-}
-h2{
     font-size: 4rem;
 }
+@media (min-width:768px){ 
+    h1{
+        font-size: 5rem;
+    }
+ }
+h2{
+    font-size: 3.2rem;
+}
+@media (min-width:768px){ 
+    h2{
+        font-size: 4rem;
+    }
+ }
 
 h3{
-    font-size: 3rem;
+    font-size: 2.4rem;
 }
+@media (min-width:768px){ 
+    h3{
+        font-size: 3rem;
+    }
+ }
 
 a {
     text-decoration: none;
@@ -48,7 +64,13 @@ img{
     transition: background-color .3s ease-out;
     text-align: center;
     border: none;
+    width: 100%;
 }
+@media (min-width:768px){ 
+    .btn{
+        width: auto;
+    }
+ }
 .btn:hover{
     background-color: #225768;
     cursor: pointer;
@@ -58,9 +80,12 @@ img{
 text-align: center;
 margin-bottom: 3rem;
 }
-.max-width-30{
+
+@media (min-width:768px){ 
+    .max-width-30{
     max-width: 30rem;
 }
+ }
 
 .nombre-sitios{
     padding: 2.5rem;
@@ -76,22 +101,36 @@ margin-bottom: 3rem;
 .nav-principal{
     padding: 2rem 0;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
     
     }
+@media (min-width:768px){ 
+    .nav-principal{
+        justify-content: space-evenly;
+        flex-direction: row;
+    
+    }
+ }
 .hero{
 
     background-image: url(../img/principal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 55rem;
+    height: 25rem;
 }
+@media (min-width:768px){
+    .hero {
+          height: 55rem;
+    }
+    
+ }
 
 
 /*categoria*/
 .categorias {
-    padding: 5rem;
+    padding: 5rem 0;
 }
 
 .categoria a{
@@ -108,44 +147,89 @@ margin-bottom: 3rem;
     border-bottom-right-radius: 1rem;
 
 }
-.listado-categoria{
+.categoria{
+    margin-bottom: 2rem;
+}
+@media (min-width:768px){ 
+    .categoria{
+        margin-bottom: 0;
+    }
+ }
+.categoria img{
+    width: 100%;
+}
+
+@media (min-width:768px){
+    .listado-categoria{
     display: grid;
    grid-template-columns: repeat(3, 1fr);
    gap: 2rem;
  
-}
+}   
+ }
 /*bloque nosotros*/
 
 .sobre-nosotros{
+    background-image: linear-gradient(to bottom, transparent 50%,#037bc0 50%, 
+    #037bc0 100%), url(../img/nosotros.jpg);
+    background-position:  center, top left;
+    background-repeat: no-repeat;
+    background-size: 100%, 70rem;
+
+}
+@media (min-width:768px){
+ .sobre-nosotros{
     background-image: linear-gradient(to right, transparent 50%,#037bc0 50%, 
     #037bc0 100%), url(../img/nosotros.jpg);
     background-position: left center;
-    padding: 10rem 0;
-    background-repeat: no-repeat;
+  
     background-size: 100%, 100rem;
 
 }
+ }
 .sobre-nosotros-grid{
-   /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 6rem;*/
-    display: flex;
-    justify-content: flex-end;
+   display: grid;
+   grid-template-rows: repeat(2, 1fr);
+   column-gap: 6rem;
 
 }
+@media (min-width:768px){ 
+    .sobre-nosotros-grid{
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: unset;
+         
+    }
+
+ }
 .text-nosotros{
-  /*  grid-column: 2 / 3;*/
-  flex-basis: 50%;
-    padding-left: 10rem;
+   grid-row: 2 / 3;
     color: #ffff;
+    padding: 5rem;
 }
+@media (min-width:768px){  
+    .text-nosotros{
+        grid-column: 2 / 3;
+         
+         }
+ }
 /*contenido*/
 .contenido-principal{
     padding-top: 5rem;
 }
+
 .producto{
     background-color: #037bc0;
+    margin-bottom: 2rem;
 
+}
+@media (min-width:768px){ 
+    .producto{
+        margin-bottom: 0;
+        
+    }
+ }
+.producto:last-of-type{
+    margin-bottom: 0;
 }
 
 .texto-producto{
@@ -167,57 +251,73 @@ margin-bottom: 3rem;
 }
 
 /* listado Productos*/
+@media (min-width:768px){ 
+            .listado-productos{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        gap: 2rem;
+        }
+        .producto:nth-child(1){
+            grid-column: 1/7;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+        }
+        .producto:nth-child(1) img{
+            height: 43rem;
+            width: 100%;
+            object-fit: cover;
+        }
 
-.listado-productos{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-   gap: 2rem;
-}
-.producto:nth-child(1){
-    grid-column: 1/7;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-.producto:nth-child(1) img{
-    height: 43rem;
-    width: 100%;
-    object-fit: cover;
-}
 
+        .producto:nth-child(2){
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .producto:nth-child(2) img, 
+        .producto:nth-child(3) img{
+            height: 30rem;
+            width: 100%;
+            object-fit: cover;
+        }
+        .producto:nth-child(3){
+            grid-column-start: 4;
+            grid-column-end: 7;
+        }
 
-.producto:nth-child(2){
-    grid-column-start: 1;
-    grid-column-end: 4;
-}
-.producto:nth-child(2) img, 
-.producto:nth-child(3) img{
-    height: 30rem;
-    width: 100%;
-    object-fit: cover;
-}
-.producto:nth-child(3){
-    grid-column-start: 4;
-    grid-column-end: 7;
-}
+        .producto:nth-child(4){
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .producto:nth-child(5){
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+        .producto:nth-child(6){
+            grid-column-start: 5;
+            grid-column-end: 7;
+        }
+ }
 
-.producto:nth-child(4){
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-.producto:nth-child(5){
-    grid-column-start: 3;
-    grid-column-end: 5;
-}
-.producto:nth-child(6){
-    grid-column-start: 5;
-    grid-column-end: 7;
-}
 /* footer*/
 .listado-footer{
    
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);  
+    text-align: center;
 }
+@media (min-width:768px){ 
+    .listado-footer{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        text-align: justify;
+    }
+ }
+ .listado-footer >div {
+    margin-bottom: 2rem;
+ }
+ @media (min-width:768px){ 
+    .listado-footer >div{
+        margin: 0;
+    }
+  }
 
 
 .sisio-footer{
@@ -244,41 +344,65 @@ margin-bottom: 3rem;
 }
 /*pagino sobre nosotros*/
 
-.nosotros{
+
+@media (min-width:768px){ 
+    .nosotros{
 
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 3rem;
-    
-}
-
-.informacion-nosotros{
+    }
+    .nosotros img{
+        
+        height: 100%;
+    }
+ }
+ .informacion-nosotros{
+    padding: 5rem;
+ }
+@media (min-width:768px){ 
+    .informacion-nosotros{
     display: flex;
    flex-direction: column;
    justify-content: center;
+   padding: 0;
 }
+ }
 
 /*blog*/
 
+@media (min-width:768px){ 
+    
 .contenedor-blog{
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 4rem; 
 }
-
-.entrada{
+ }
+.entrada {
+   border-bottom: 2px solid #d6ccc2;
     margin-bottom: 4rem;
-    border-bottom: 2px solid #d6ccc2;
-    padding-bottom: 4rem;
-
+    text-align: center;
 }
+.contenido-blog{
+    padding: 2rem 2rem 4rem 2rem;
+}
+@media (min-width:768px){ 
+    .entrada{
+    text-align: unset;
+    }
+ }
+ .entrada p{
+    text-align: justify;
+ }
 .entrada:last-of-type{
     border:none;
 }
 
 .entrada-meta p{
     font-weight: 900;
+    margin:  0;
 }
 .entrada-meta span{
     
@@ -287,16 +411,28 @@ margin-bottom: 3rem;
 }
 .entrada-meta{
     display: flex;
-    flex-direction: row;
-    font-size: 2rem; 
-    justify-content: space-between;
-    margin-top: 0%;
+    flex-direction: column;
+    font-size: 1.4rem;
+    justify-content: space-around;
+    
 }
+@media (min-width:768px){ 
+    .entrada-meta{
+            flex-direction: row;
+           justify-content: space-between;
+          
+    }
+ }
 
-.contenedor-entrada-blog{
+
+
+@media (min-width:768px){ 
+     .contenedor-entrada-blog{ 
     width: 60rem;
     margin: 0 auto;
 }
+ }
+
 /*Galeria*/
 
 .galeria{
@@ -304,10 +440,16 @@ margin-bottom: 3rem;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 
+    
 }
+@media (min-width:768px){ 
+    .galeria{
+        grid-template-columns: repeat(3, 1fr);
+    }
+ }
 .galeria img{
     height: 40rem;
     width: 40rem;
